@@ -22,4 +22,48 @@ use strict;
 use warnings;
 use utf8;
 
-print 'good';
+sub getResult
+{
+    my ($x) =@_;
+    my $result = <>;
+
+    if (int($result) == $x)
+    {
+        print "good\n";
+        return 1;
+    }
+    else
+    {
+        print "bad, result = $x \n";
+        return undef;
+    }
+
+}
+
+sub _add
+{
+    $a = int(rand(100));
+    $b = int(rand(100));
+    
+    print "$a+$b=";
+
+    return $a+$b;
+}
+
+sub _sub
+{
+    $a = int(rand(100));
+    $b = int(rand(100));
+    
+    print "$a-$b=";
+
+    return $a-$b;
+}
+
+sub main
+{
+    getResult(_add());
+    getResult(_sub());
+}
+
+main();
