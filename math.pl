@@ -26,7 +26,7 @@ sub getResult
 {
     my ($x) =@_;
     my $result = <>;
-
+    
     if (int($result) == $x)
     {
         print "good\n";
@@ -60,10 +60,31 @@ sub _sub
     return $a-$b;
 }
 
+sub _div
+{
+    $a = int(rand(100));
+    $b = int(rand(10));
+    
+    print "$a/$b=";
+
+    return int($a/$b);
+}
+
+sub _mul
+{
+    $a = int(rand(100));
+    $b = int(rand(100));
+    
+    print "$a*$b=";
+
+    return $a*$b;
+}
+
 sub main
 {
     getResult(_add());
     getResult(_sub());
+    getResult(_div());
 }
 
 main();
